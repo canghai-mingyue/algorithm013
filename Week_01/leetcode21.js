@@ -14,7 +14,7 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var mergeTwoLists = function(l1, l2) {
+const mergeTwoLists = function(l1, l2) {
     if (l1 === null) {
         return l2
     } else if (l2 === null) {

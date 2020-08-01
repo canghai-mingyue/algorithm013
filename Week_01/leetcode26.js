@@ -6,7 +6,7 @@
  */
 
 // 优解
-var removeDuplicates = function(nums) {
+const removeDuplicates = function(nums) {
     let i = 0;
     for(let j = 1; j < nums.length; j++) {
         if (nums[j] !== nums[i]) {
@@ -18,7 +18,7 @@ var removeDuplicates = function(nums) {
 }
 
 // 个人第一思路
-var removeDuplicates = function(nums) {
+const myRemoveDuplicates = function(nums) {
    let tem = 0;
    for(let i = 0; i < nums.length; i++) {
        if (i === 0) {
