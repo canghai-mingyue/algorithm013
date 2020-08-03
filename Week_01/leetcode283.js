@@ -3,8 +3,9 @@
 /**
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
+ * 个人思路
  */
-const moveZeroes = function(nums) {
+const myMoveZeroes = function(nums) {
     let j = 0
     nums.forEach((val, index) => {
         if (val !== 0) {
@@ -16,5 +17,14 @@ const moveZeroes = function(nums) {
         nums[j] = 0
         j++
     }
+    return nums
+};
+
+// 简洁做法
+const moveZeroes = function(nums) {
+    let j = 0
+    nums.forEach((val, index) => {
+        if (val !== 0) [nums[j++], nums[index]] = [val, nums[j]]
+    })
     return nums
 };
