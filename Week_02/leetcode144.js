@@ -29,7 +29,7 @@ const preorderTraversal1 = function(root) {
 
 // 代码极简的递归法
 const preorderTraversal2= function(root) {
-    return root ? [root.val, ...preorderTraversal(root.left), ...preorderTraversal(root.right)] : []
+    return root ? [root.val, ...preorderTraversal2(root.left), ...preorderTraversal2(root.right)] : []
 };
 
 // 递归法
