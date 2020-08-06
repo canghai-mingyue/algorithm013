@@ -4,6 +4,7 @@
  * @param {string} s
  * @param {string} t
  * @return {boolean}
+ * hash法
  */
 const isAnagram = function(s, t) {
     const map = new Map();
@@ -29,4 +30,8 @@ const isAnagram = function(s, t) {
     }catch (e) {
         return false
     }
+};
+// 暴力排序
+const isAnagram1 = function(s, t) {
+    return s.split('').sort().join('') === t.split('').sort().join('')
 };
