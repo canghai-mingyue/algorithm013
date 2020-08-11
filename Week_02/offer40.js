@@ -1,4 +1,4 @@
-// 剑指offer 40 最下的k个数
+// 剑指offer 40 最小的k个数
 
 /**
  * @param {number[]} arr
