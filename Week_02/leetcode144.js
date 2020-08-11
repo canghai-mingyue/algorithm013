@@ -14,9 +14,9 @@
  * 迭代法
  */
 const preorderTraversal1 = function(root) {
+    if (root == null) return [];
     let stack = [];
     let output = [];
-    if (root == null) return output;
     stack.push(root);
     while (stack.length > 0) {
         const node = stack.pop();
