@@ -10,6 +10,7 @@
 /**
  * @param {TreeNode} root
  * @return {number[][]}
+ * BFS + 统计同一层级节点数目
  */
 const levelOrder = function(root) {
     if (root === null) return [];
