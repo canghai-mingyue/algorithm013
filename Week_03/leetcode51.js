@@ -4,6 +4,7 @@
  * @param {number} n
  * @return {string[][]}
  * DFS + 回溯
+ * 重点还是在于发现规律呀，主副对角线的下标规律
  */
 const solveNQueens = function(n) {
     if (n === 0) return [];
