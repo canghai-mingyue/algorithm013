@@ -3,6 +3,7 @@
 /**
  * @param {number[]} nums
  * @return {number}
+ * map存储
  */
 const majorityElement = function(nums) {
     let length = nums.length;
@@ -22,4 +23,24 @@ const majorityElement = function(nums) {
         }
     }
     return result;
+};
+
+// 代码简单粗暴的排序法
+const majorityElement2 = function(nums) {
+    nums.sort((a, b) => a- b);
+    return nums[Math.floor(nums.length / 2)]
+};
+
+// 巧妙地摩尔投票法
+const majorityElement3 = function(nums) {
+    let tem = nums[0];
+    let count = 1;
+    for(let i = 1; i < nums.length; i++) {
+        if(nums[i] === tem) count++;
+        else {
+            if(count === 1) tem = nums[i];
+            else count--;
+        }
+    }
+    return tem;
 };
