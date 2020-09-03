@@ -5,7 +5,7 @@
  * @param {number} n
  * @return {number}
  * m是列，n是行 a[n][m]
- * 动态规划
+ * 动态规划 时间复杂度O(mn), 空间复杂度O(mn)
  */
 const uniquePaths = function(m, n) {
     // 初始化二维数组
@@ -23,4 +23,15 @@ const uniquePaths = function(m, n) {
         }
     }
     return array[0][0];
+};
+
+// 空间复杂度优化 => O(n)
+const uniquePaths2 = function(m, n) {
+    const arr = new Array(n).fill(1);
+    for (let i = m - 2; i >= 0; i--) {
+        for (let j = n - 2; j >= 0; j--) {
+            arr[j] = arr[j] + arr[j+1];
+        }
+    }
+    return arr[0];
 };
