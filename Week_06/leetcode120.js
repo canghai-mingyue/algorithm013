@@ -3,6 +3,7 @@
 /**
  * @param {number[][]} triangle
  * @return {number}
+ * 空间复杂度O(2n)
  */
 const minimumTotal = function(triangle) {
     let length = triangle.length;
@@ -18,6 +19,22 @@ const minimumTotal = function(triangle) {
             cur[j] = Math.min(pre[j], pre[j-1]) + triangle[i][j];
         }
         cur[i] = pre[i-1] + triangle[i][i];
+    }
+    return Math.min(...cur);
+};
+
+// 空间复杂度优化 O(n)
+const minimumTotal2 = function(triangle) {
+    let length = triangle.length;
+    if (length < 2) return triangle[0][0];
+    let cur = triangle[0];
+    for (let i = 1; i < length; i++) {
+        // 此处必须从后往前遍历，由于f(i)需要使用到f(i-1),从前往后会出错。
+        cur[i] = cur[i-1] + triangle[i][i];
+        for (let j = i -1 ; j > 0; j--) {
+            cur[j] = Math.min(cur[j], cur[j-1]) + triangle[i][j];
+        }
+        cur[0] = cur[0] + triangle[i][0];
     }
     return Math.min(...cur);
 };
